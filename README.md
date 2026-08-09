@@ -10,21 +10,24 @@ self-generated dataset and an object detector can approximate that workflow
 at small scale.
 
 ## Pipeline
+
+```
 Autodesk Revit (structural model + MEP ductwork)
-│
-├─ Interference Check → mathematically confirmed clash locations
-│
-▼
+        │
+        ├─ Interference Check → mathematically confirmed clash locations
+        │
+        ▼
 Manual screenshot capture (clash + clean/no-clash views)
-│
-▼
+        │
+        ▼
 Roboflow (bounding-box annotation + augmentation)
-│
-▼
+        │
+        ▼
 YOLOv8 (Ultralytics, transfer-learned from COCO weights)
-│
-▼
+        │
+        ▼
 Evaluation (mAP50 / mAP50-95 / precision / recall)
+```
 ## What was built
 
 - Modeled a multi-story structural building (columns, beams, slabs) with MEP
